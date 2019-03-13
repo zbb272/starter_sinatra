@@ -1,0 +1,15 @@
+<h1>Edit City</h1>
+
+<br>
+
+<form action="/cities/<%=@city.id%>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <label for="city_name">Name:</label>
+  <input type="text" name="cities[name]" id="city_name" value="<%=@city.name%>">
+
+  <label for="city_population">Population:</label>
+  <input type="text" name="cities[population]" id="city_population" value="<%=@city.population%>">
+
+  <input type="submit" name="submit" value="Submit">
+
+</form>

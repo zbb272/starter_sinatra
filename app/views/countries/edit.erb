@@ -1,0 +1,19 @@
+<h1>Edit Country</h1>
+
+<br>
+
+<form action="/countries/<%=@country.id%>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <label for="country_name">Name:</label>
+  <input type="text" name="country[name]" id="country_name" value="<%=@country.name%>">
+
+  <label for="">Change Cities</label>
+  <% @cities.each do | city |%>
+  <input type="checkbox" name="country[city_ids][]" id="<%=city.id%>" value="<%=city.id%>" <%='checked' if @country.cities.include?(city)%>><%=city.name%></input>
+  <%end%>
+
+  <br>
+
+  <input type="submit" name="submit" value="Submit">
+
+</form>

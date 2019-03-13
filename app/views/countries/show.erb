@@ -1,0 +1,24 @@
+<h1><%= @country.name %></h1>
+
+<h2>Cities:</h2>
+
+<ul>
+  <% @cities.each do |city| %>
+  <li><a href="/cities/<%=city.id%>"><%=city.name%></a></li>
+  <%end%>
+</ul>
+
+<a href="/countries">
+Back
+</a>
+
+<br/>
+<a href="/countries/<%=@country.id%>/edit">
+Edit
+</a>
+
+
+<form class="" action="/countries/<%=@country.id%>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" name="delete" value="Delete">
+</form>
